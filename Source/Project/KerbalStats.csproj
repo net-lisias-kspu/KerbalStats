@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7328B162-2850-4D43-B5A1-BA2C119D2BF4}</ProjectGuid>
+    <BaseIntermediateOutputPath>../../obj</BaseIntermediateOutputPath>
+    <OutputType>Library</OutputType>
+    <RootNamespace>KerbalStats</RootNamespace>
+    <AssemblyName>KerbalStats</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\LIB\managed\1.4.1\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\LIB\managed\1.4.1\Assembly-CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\IKerbalExt.cs">
+      <Link>IKerbalExt.cs</Link>
+    </Compile>
+    <Compile Include="..\KerbalExt.cs">
+      <Link>KerbalExt.cs</Link>
+    </Compile>
+    <Compile Include="..\KerbalStats.cs">
+      <Link>KerbalStats.cs</Link>
+    </Compile>
+    <Compile Include="..\KerbalStatsScenario.cs">
+      <Link>KerbalStatsScenario.cs</Link>
+    </Compile>
+    <Compile Include="..\KerbalStatsWrapper.cs">
+      <Link>KerbalStatsWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\Experience\Body.cs">
+      <Link>Experience\Body.cs</Link>
+    </Compile>
+    <Compile Include="..\Experience\Events.cs">
+      <Link>Experience\Events.cs</Link>
+    </Compile>
+    <Compile Include="..\Experience\Experience.cs">
+      <Link>Experience\Experience.cs</Link>
+    </Compile>
+    <Compile Include="..\Experience\PartSeatTasks.cs">
+      <Link>Experience\PartSeatTasks.cs</Link>
+    </Compile>
+    <Compile Include="..\Experience\SeatTasks.cs">
+      <Link>Experience\SeatTasks.cs</Link>
+    </Compile>
+    <Compile Include="..\Experience\Task.cs">
+      <Link>Experience\Task.cs</Link>
+    </Compile>
+    <Compile Include="..\Experience\Tracker.cs">
+      <Link>Experience\Tracker.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\BadAss.cs">
+      <Link>Genome\BadAss.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\Courage.cs">
+      <Link>Genome\Courage.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\Gender.cs">
+      <Link>Genome\Gender.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\GenePair.cs">
+      <Link>Genome\GenePair.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\Genome.cs">
+      <Link>Genome\Genome.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\Probability.cs">
+      <Link>Genome\Probability.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\Random.cs">
+      <Link>Genome\Random.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\Stupidity.cs">
+      <Link>Genome\Stupidity.cs</Link>
+    </Compile>
+    <Compile Include="..\Genome\Trait.cs">
+      <Link>Genome\Trait.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\DebugWindow.cs">
+      <Link>Progeny\DebugWindow.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\IKerbal.cs">
+      <Link>Progeny\IKerbal.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Progeny.cs">
+      <Link>Progeny\Progeny.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Settings.cs">
+      <Link>Progeny\Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Tracker.cs">
+      <Link>Progeny\Tracker.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\AstronautComplex.cs">
+      <Link>Progeny\Location\AstronautComplex.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\EVA.cs">
+      <Link>Progeny\Location\EVA.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\Location.cs">
+      <Link>Progeny\Location\Location.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\LocationTracker.cs">
+      <Link>Progeny\Location\LocationTracker.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\Tomb.cs">
+      <Link>Progeny\Location\Tomb.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\Unknown.cs">
+      <Link>Progeny\Location\Unknown.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\VesselPart.cs">
+      <Link>Progeny\Location\VesselPart.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\Wilds.cs">
+      <Link>Progeny\Location\Wilds.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Location\Womb.cs">
+      <Link>Progeny\Location\Womb.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\AgingTimeK.cs">
+      <Link>Progeny\Traits\AgingTimeK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\AgingTimeP.cs">
+      <Link>Progeny\Traits\AgingTimeP.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\BioClockInverse.cs">
+      <Link>Progeny\Traits\BioClockInverse.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\BioClockTC.cs">
+      <Link>Progeny\Traits\BioClockTC.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\CyclePeriodK.cs">
+      <Link>Progeny\Traits\CyclePeriodK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\CyclePeriodP.cs">
+      <Link>Progeny\Traits\CyclePeriodP.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\GameteLifeK.cs">
+      <Link>Progeny\Traits\GameteLifeK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\GameteLifeP.cs">
+      <Link>Progeny\Traits\GameteLifeP.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\GestationPeriodK.cs">
+      <Link>Progeny\Traits\GestationPeriodK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\GestationPeriodP.cs">
+      <Link>Progeny\Traits\GestationPeriodP.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\InterestK.cs">
+      <Link>Progeny\Traits\InterestK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\InterestTC.cs">
+      <Link>Progeny\Traits\InterestTC.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\MaturationTimeK.cs">
+      <Link>Progeny\Traits\MaturationTimeK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\MaturationTimeP.cs">
+      <Link>Progeny\Traits\MaturationTimeP.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\OvulationTimeK.cs">
+      <Link>Progeny\Traits\OvulationTimeK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\OvulationTimeP.cs">
+      <Link>Progeny\Traits\OvulationTimeP.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\PRange.cs">
+      <Link>Progeny\Traits\PRange.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\TimeK.cs">
+      <Link>Progeny\Traits\TimeK.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Traits\TimeP.cs">
+      <Link>Progeny\Traits\TimeP.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Adult.cs">
+      <Link>Progeny\Zygote\Adult.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\BioClock.cs">
+      <Link>Progeny\Zygote\BioClock.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Cycle.cs">
+      <Link>Progeny\Zygote\Cycle.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Embryo.cs">
+      <Link>Progeny\Zygote\Embryo.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Female.cs">
+      <Link>Progeny\Zygote\Female.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\FemaleFSM.cs">
+      <Link>Progeny\Zygote\FemaleFSM.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Gamete.cs">
+      <Link>Progeny\Zygote\Gamete.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Interest.cs">
+      <Link>Progeny\Zygote\Interest.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Juvenile.cs">
+      <Link>Progeny\Zygote\Juvenile.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Male.cs">
+      <Link>Progeny\Zygote\Male.cs</Link>
+    </Compile>
+    <Compile Include="..\Progeny\Zygote\Zygote.cs">
+      <Link>Progeny\Zygote\Zygote.cs</Link>
+    </Compile>
+    <Compile Include="..\Utils\EnumUtil.cs">
+      <Link>Utils\EnumUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\Utils\MathUtil.cs">
+      <Link>Utils\MathUtil.cs</Link>
+    </Compile>
+    <Compile Include="..\Utils\ModuleLoader.cs">
+      <Link>Utils\ModuleLoader.cs</Link>
+    </Compile>
+    <Compile Include="..\assembly\VersionReport.cs">
+      <Link>Properties\VersionReport.cs</Link>
+    </Compile>
+    <Compile Include="..\toolbar\Toolbar.cs">
+      <Link>toolbar\Toolbar.cs</Link>
+    </Compile>
+    <Compile Include="..\toolbar\ToolbarWrapper.cs">
+      <Link>toolbar\ToolbarWrapper.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
