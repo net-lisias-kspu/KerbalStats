@@ -1,3 +1,11 @@
 .vs
 obj
 bin
+Archive
+GameData/**/*.version
+GameData/**/README.md
+GameData/**/CHANGE_LOG.md
+GameData/**/LICENSE
+GameData/**/Plugins/*.dll
+GameData/KerbalStats/seat_tasks.cfg
+GameData/KerbalStats/KerbalStatsWrapper.cs
