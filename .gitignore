@@ -9,3 +9,4 @@ GameData/**/LICENSE
 GameData/**/Plugins/*.dll
 GameData/KerbalStats/seat_tasks.cfg
 GameData/KerbalStats/KerbalStatsWrapper.cs
+Source/**/Properties/Version.cs
