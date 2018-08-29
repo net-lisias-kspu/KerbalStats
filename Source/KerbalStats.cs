@@ -102,10 +102,15 @@ namespace KerbalStats {
 
 		void onKerbalNameChange (ProtoCrewMember pcm, string oldName, string newName)
 		{
-			if (oldName != newName) {
-				kerbals[newName] = kerbals[oldName];
-				kerbals.Remove (oldName);
+			if (oldName == newName) return;
+			if (!kerbals.ContainsKey(oldName))
+			{
+				Debug.LogError(String.Format("[KS Exp] onKerbalNameChange: oldName {0} does not exist on kerbals!", oldName));
+				return;
 			}
+
+			kerbals[newName] = kerbals[oldName];
+			kerbals.Remove (oldName);
 		}
 
 		void onProtoCrewMemberLoad (GameEvents.FromToAction<ProtoCrewMember,ConfigNode> action)

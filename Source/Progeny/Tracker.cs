@@ -56,12 +56,22 @@ namespace KerbalStats.Progeny {
 			Debug.Log("[ProgenyTracker] ProcessLoadingKerbals");
 			if (loading_kerbals != null) {
 				foreach (var ext in loading_kerbals) {
-					if (ext[name] != null) {
-						var kerbal = ProgenyScenario.current.GetKerbal (ext[name] as string) as IKerbal;
-						kerbal.kerbal = ext.kerbal;
-						Debug.LogFormat("    {0} {1} {2}", ext.kerbal.name, ext[name], kerbal.id);
-					} else {
-						AddKerbal (ext);
+					try
+					{
+						if (null == ext[name])
+						{   // TODO: Chech what's exactly a KerbalExt with null name. This could be breaking the Save later?
+							AddKerbal(ext);
+						}
+						else
+						{
+							var kerbal = ProgenyScenario.current.GetKerbal(ext[name] as string) as IKerbal;
+							kerbal.kerbal = ext.kerbal;
+							Debug.LogFormat("    {0} {1} {2}", ext.kerbal.name, ext[name], kerbal.id);
+						}
+					}
+					catch (Exception e)
+					{
+						Debug.LogException(e);
 					}
 				}
 				loading_kerbals = null;

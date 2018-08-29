@@ -226,23 +226,51 @@ namespace KerbalStats.Progeny {
 			config.AddValue ("zygote_id", id);
 
 			foreach (var embryo in embryos.Values) {
-				var node = config.AddNode ("embryo");
-				embryo.Save (node);
+				try
+				{
+					var node = config.AddNode("embryo");
+					embryo.Save(node);
+				}
+				catch (Exception e)
+				{
+					Debug.LogException(e);
+				}
 			}
 
 			foreach (var juvenile in juveniles.Values) {
-				var node = config.AddNode ("juvenile");
-				juvenile.Save (node);
+				try
+				{
+					var node = config.AddNode("juvenile");
+					juvenile.Save(node);
+				}
+				catch (Exception e)
+				{
+					Debug.LogException(e);
+				}
 			}
 
 			foreach (var female in females.Values) {
-				var node = config.AddNode ("female");
-				female.Save (node);
+				try
+				{
+					var node = config.AddNode ("female");
+					female.Save (node);
+				}
+				catch (Exception e)
+				{
+					Debug.LogException(e);
+				}
 			}
 
 			foreach (var male in males.Values) {
-				var node = config.AddNode ("male");
-				male.Save (node);
+				try
+				{
+					var node = config.AddNode ("male");
+					male.Save (node);
+				}
+				catch (Exception e)
+				{
+					Debug.LogException(e);
+				}
 			}
 		}
 
