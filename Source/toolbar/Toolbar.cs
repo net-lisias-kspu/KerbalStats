@@ -26,24 +26,24 @@ namespace KerbalStats {
 	[KSPAddon (KSPAddon.Startup.EveryScene, false)]
 	public class KSToolbar_ProgenyDebug : MonoBehaviour
 	{
-		private IButton button;
+		//private IButton button;
 
 		public void Awake ()
 		{
 			if (ToolbarManager.Instance == null) {
 				return;
 			}
-			button = ToolbarManager.Instance.add ("KerbalStats", "KS_P_Debug");
-			button.TexturePath = "KerbalStats/Textures/icon_button";
-			button.ToolTip = "KerbalStats Progeny Debug";
-			button.OnClick += (e) => Progeny.DebugWindow.ToggleGUI ();
+			//button = ToolbarManager.Instance.add ("KerbalStats", "KS_P_Debug");
+			//button.TexturePath = "KerbalStats/Textures/icon_button";
+			//button.ToolTip = "KerbalStats Progeny Debug";
+			//button.OnClick += (e) => Progeny.DebugWindow.ToggleGUI ();
 		}
 
 		void OnDestroy()
 		{
-			if (button != null) {
-				button.Destroy ();
-			}
+			//if (button != null) {
+			//	button.Destroy ();
+			//}
 		}
 	}
 }

@@ -3,6 +3,13 @@
 KerbalStats is a KSP mod for keeping track of extra information about the Kerbals in your game. 
 
 
+## **Attention**
+
+An entire subsistem (`Progeny`) was deactivated on this fork. While being a hairy move, this stunt fixed a lot of Exceptions being thrown on my KSP.log, mainly `KeyNotFoundException: The given key was not present in the dictionary.` and some collateral ones being thrown by third parties due the previous processes being interrupted by this.
+
+Since "I don't really know what I'm doing" ((tm) Lisias T), consider this fork a **very experimental** one. This can break your savegame badly, besides fixing mine.
+
+
 ## In a Hurry
 
 * [Releases](https://github.com/net-lisias-kspu/KerbalWindTunnel/tree/Archive)
