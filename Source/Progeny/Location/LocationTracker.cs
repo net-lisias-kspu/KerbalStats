@@ -73,34 +73,47 @@ namespace KerbalStats.Progeny {
 
 		public Location Parse (string locstr)
 		{
-			string []parms = locstr.Split (',');
-			Location location = null;
-			switch (parms[0]) {
-				case "VesselPart":
-					Guid id = new Guid (parms[1]);
-					if (!vessel_parts.ContainsKey (id)) {
-						Vessel vessel = FlightGlobals.Vessels.Where (v => v.id == id).FirstOrDefault ();
-						vessel_parts[vessel.id] = new VesselPart (vessel);
-					}
-					location = vessel_parts[id];
-					break;
-				case "EVA":
-					location = eva;
-					break;
-				case "Wilds":
-					location = wilds;
-					break;
-				case "Womb":
-					location = womb;
-					break;
-				case "Tomb":
-					location = tomb;
-					break;
-				case "AstronautComplex":
-					location = astronaut_complex;
-					break;
+			try
+			{
+				string[] parms = locstr.Split(',');
+				Location location = null;
+				switch (parms[0])
+				{
+					case "VesselPart":
+						Guid id = new Guid(parms[1]);
+						if (!vessel_parts.ContainsKey(id))
+						{
+							Vessel vessel = FlightGlobals.Vessels.Where(v => v.id == id).FirstOrDefault();
+							vessel_parts[vessel.id] = new VesselPart(vessel);
+						}
+						location = vessel_parts[id];
+						break;
+					case "EVA":
+						location = eva;
+						break;
+					case "Wilds":
+						location = wilds;
+						break;
+					case "Womb":
+						location = womb;
+						break;
+					case "Tomb":
+						location = tomb;
+						break;
+					case "AstronautComplex":
+						location = astronaut_complex;
+						break;
+					default:
+						Debug.LogWarningFormat("[KerbalStat] LocationTracker.Parser: {0} is not a recognizable location!", location);
+						break;
+				}
+				return location;
 			}
-			return location;
+			catch (Exception e)
+			{
+				Debug.LogErrorFormat("Error parsing [{0}]", locstr);
+				throw e;
+			}
 		}
 	}
 }

@@ -217,6 +217,12 @@ namespace KerbalStats.Progeny {
 
 		void CheckLocation (ProtoCrewMember kerbal)
 		{
+			if (!kerbal_ids.ContainsKey(kerbal.name))
+			{
+				Debug.LogErrorFormat("[KS Progeny.Tracker.CheckLocation] {0} is not available on kerbal_ids", kerbal.name);
+				return;
+			}
+
 			var zygote = ProgenyScenario.current.GetKerbal (kerbal_ids[kerbal.name]);
 			(zygote as IKerbal).kerbal = kerbal;
 			Location location = null;
@@ -353,9 +359,16 @@ namespace KerbalStats.Progeny {
 			var location = ProgenyScenario.current.GetLocation ("Vessel", vessel);
 			var crew = vessel.GetVesselCrew ();
 			for (int i = 0; i < crew.Count; i++) {
-				//Debug.Log(String.Format ("[KS Progeny] {0} {1}", crew[i].name, location));
-				var kerbal = ProgenyScenario.current.GetKerbal (kerbal_ids[crew[i].name]);
-				kerbal.SetLocation (location);
+				Debug.Log(String.Format ("[KS Progeny] {0} {1}", crew[i].name, location));
+				try
+				{
+					var kerbal = ProgenyScenario.current.GetKerbal(kerbal_ids[crew[i].name]);
+					kerbal.SetLocation(location);
+				}
+				catch (Exception e)
+				{
+					Debug.LogException(e);
+				}
 			}
 		}
 
