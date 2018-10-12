@@ -15,5 +15,5 @@ echo $FILE
 clean
 zip -r $FILE ./GameData/* -x ".*"
 zip -r $FILE ./PluginData/* -x ".*"
-zip -d $FILE __MACOSX "**/.DS_Store" "**/Makefile" "**/files"
+zip -d $FILE __MACOSX "**/.DS_Store"
 mv $FILE ./Archive

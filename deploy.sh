@@ -32,7 +32,9 @@ cp $VERSIONFILE "./GameData/$TARGETDIR"
 cp CHANGE_LOG.md "./GameData/$TARGETDIR"
 cp README.md  "./GameData/$TARGETDIR"
 cp LICENSE "./GameData/$TARGETDIR"
-deploy $PACKAGE
-
+cp NOTICE "./GameData/$TARGETDIR"
 cp Source/Experience/seat_tasks.cfg "./GameData/$TARGETDIR"
 cp Source/KerbalStatsWrapper.cs "./GameData/$TARGETDIR"
+for dll in $PACKAGE ; do
+    deploy $dll
+done
