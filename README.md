@@ -12,9 +12,9 @@ Since "I don't really know what I'm doing" ((tm) Lisias T), consider this fork a
 
 ## In a Hurry
 
-* [Releases](https://github.com/net-lisias-kspu/KerbalWindTunnel/tree/Archive)
-* [Source](https://github.com/net-lisias-kspu/KerbalWindTunnel)
 * [Latest Release](https://github.com/net-lisias-kspu/KerbalWindTunnel/releases)
+	+ [Binaries](https://github.com/net-lisias-kspu/KerbalWindTunnel/tree/Archive)
+* [Source](https://github.com/net-lisias-kspu/KerbalWindTunnel)
 * [Change Log](./CHANGE_LOG.md)
 
 
